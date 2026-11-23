@@ -1,0 +1,13 @@
+{
+  "name": "ai-research-engineering-skills",
+  "displayName": "AI Research & Engineering Skills",
+  "version": "1.0.0",
+  "author": "dolong2110",
+  "repository": "https://github.com/dolong2110/ai-research-engineering-skills",
+  "description": "25 Antigravity skills and 5 specialized subagents covering ML/DL/LLM research (Quantitative Finance, LLMs/NLP, AI for Chemistry, Learned Algorithms), PaperOrchestra automation, IEEE/ACM & ML academic paper writing & publication, algorithms & data structures, and software engineering.",
+  "suggestedPrompts": [
+    "Design a falsifiable research protocol and ablation study for my ML paper",
+    "Audit my LaTeX manuscript for prose quality, citations, and double-blind compliance",
+    "Benchmark and fuzz-test my algorithm against a brute-force oracle"
+  ]
+}
