@@ -1,7 +1,5 @@
 # AI Research & Engineering Skills (Antigravity Plugin)
 
-[![CI](https://github.com/dolong2110/ai-research-engineering-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/dolong2110/ai-research-engineering-skills/actions/workflows/ci.yml)
-
 A complete, batteries-included **Google Antigravity** plugin bundling **27 modular skills**, **5 specialized subagents**, **17 runnable Python audit/benchmark/scaffolding CLIs**, and always-on scientific & software engineering rules.
 
 Built for interdisciplinary AI/ML/DL/LLM research across **Quantitative Finance**, **LLMs & NLP**, **AI for Chemistry**, **Algorithms & Data Structures**, **Software Engineering**, and automated paper drafting with **[PaperOrchestra](https://github.com/google-research/paper-orchestra)**.
@@ -98,6 +96,16 @@ For live database and external tooling integrations alongside these 25 custom sk
 - **Context7** (`antigravity-plugins-partners/plugin/context7`) — Version-exact library documentation lookup.
 - **CodeRabbit** (`antigravity-plugins-partners/plugin/coderabbit`) — AI pull-request reviews.
 - **Arize AX** (`antigravity-plugins-partners/plugin/arize-skills`) — Agent tracing, evals & prompt optimization.
+
+---
+
+## Local Verification (CI Suite)
+
+Run all plugin manifest, skill YAML, security, workflow lint, and self-test checks locally in seconds:
+
+```bash
+./scripts/run_ci.sh
+```
 
 ---
 
