@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Plugin, Skills & Scripts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PyYAML
+        run: python -m pip install --upgrade pip pyyaml
+
+      - name: Validate plugin.json, skills, and subagents
+        run: |
+          python - <<'PY'
+          import json, pathlib, yaml
+          root = pathlib.Path(".")
+          manifest = json.loads((root / "plugin.json").read_text(encoding="utf-8"))
+          allowed = {"name", "displayName", "version", "description", "logo", "suggestedPrompts", "author", "homepage", "repository", "disabled"}
+          unknown = set(manifest.keys()) - allowed
+          assert not unknown, f"Unknown plugin.json fields: {unknown}"
+
+          skills = sorted((root / "skills").glob("*/SKILL.md"))
+          assert skills, "No skills found"
+          for s in skills:
+              parts = s.read_text(encoding="utf-8").split("---", 2)
+              assert len(parts) >= 3, f"Missing YAML frontmatter: {s}"
+              meta = yaml.safe_load(parts[1])
+              assert meta["name"] == s.parent.name, f"Name mismatch in {s}"
+              assert len(meta["description"]) > 20, f"Short description in {s}"
+
+          agents = sorted((root / "agents").glob("*.md"))
+          for a in agents:
+              parts = a.read_text(encoding="utf-8").split("---", 2)
+              meta = yaml.safe_load(parts[1])
+              assert meta["name"] == a.stem, f"Agent name mismatch: {a}"
+              assert meta["subagent"] is True and meta["mainAgent"] is False
+          print(f"Validated {len(skills)} skills and {len(agents)} subagents.")
+          PY
+
+      - name: Static code, security & workflow lint
+        run: |
+          python skills/python-ml-engineering/scripts/ml_code_check.py --path skills
+          python skills/security-and-production-ops/scripts/security_static_scan.py --path skills
+          python skills/github-actions-cicd/scripts/lint_workflows.py --repo .
+          python skills/algorithms-and-data-structures/scripts/benchmark_and_complexity.py --self-test --sizes 200,400,800

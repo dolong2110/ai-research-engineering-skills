@@ -1,0 +1,16 @@
+name: Feature / Skill Request
+description: Propose a new feature, skill, template, or enhancement
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Goal
+      description: What workflow or research/engineering problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe the desired behavior, CLI interface, or skill scope.

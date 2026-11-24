@@ -1,6 +1,6 @@
 # AI Research & Software Engineering — Plugin Rules
 
-This plugin equips Antigravity with 25 modular skills and 5 specialized subagents spanning scientific research, domain AI (Finance, LLMs/NLP, Chemistry, Learned Algorithms), academic writing & publication, PaperOrchestra orchestration, algorithms & data structures, and software engineering.
+This plugin equips Antigravity with 27 modular skills and 5 specialized subagents spanning scientific research, domain AI (Finance, LLMs/NLP, Chemistry, Learned Algorithms), academic writing & publication, PaperOrchestra orchestration, algorithms & data structures, software engineering, and GitHub CI/CD.
 
 ## Universal Integrity & Engineering Guardrails
 
@@ -32,6 +32,8 @@ This plugin equips Antigravity with 25 modular skills and 5 specialized subagent
 - `testing-and-verification` — Offline API mock tests & 4-check ML sanity suite (shapes, gradients, batch independence, single-batch overfit)
 - `systematic-debugging` — Root-cause debugging for Python, concurrency, LLM parsers & ML training pathologies
 - `git-and-code-review` — Conventional commits, severity-ranked reviews & pre-commit secret/binary gate (`pre_commit_hygiene.py`)
+- `github-repo-and-collaboration` — GitHub repo setup, `.github/` PR/issue forms, Dependabot, CODEOWNERS, branch protection & `gh` workflows (`init_github_repo.py`)
+- `github-actions-cicd` — Fast cached CI/CD pipelines, OIDC releases, workflow linting & Actions security hardening (`lint_workflows.py`)
 
 ### PaperOrchestra Automation (`google-research/paper-orchestra`)
 - `paper-orchestra-setup`, `research-ideation-and-prep`, `paper-orchestra-run`, `literature-and-citations`, `scientific-plotting-and-diagrams`, `latex-template-and-build`, `paper-peer-review-and-eval`, `end-to-end-research-workflow`

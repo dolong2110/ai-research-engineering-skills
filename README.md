@@ -1,6 +1,8 @@
 # AI Research & Engineering Skills (Antigravity Plugin)
 
-A complete, batteries-included **Google Antigravity** plugin bundling **25 modular skills**, **5 specialized subagents**, **15 runnable Python audit/benchmark CLIs**, and always-on scientific & software engineering rules.
+[![CI](https://github.com/dolong2110/ai-research-engineering-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/dolong2110/ai-research-engineering-skills/actions/workflows/ci.yml)
+
+A complete, batteries-included **Google Antigravity** plugin bundling **27 modular skills**, **5 specialized subagents**, **17 runnable Python audit/benchmark/scaffolding CLIs**, and always-on scientific & software engineering rules.
 
 Built for interdisciplinary AI/ML/DL/LLM research across **Quantitative Finance**, **LLMs & NLP**, **AI for Chemistry**, **Algorithms & Data Structures**, **Software Engineering**, and automated paper drafting with **[PaperOrchestra](https://github.com/google-research/paper-orchestra)**.
 
@@ -9,7 +11,7 @@ Built for interdisciplinary AI/ML/DL/LLM research across **Quantitative Finance*
 ## Quick Install (Share with Friends)
 
 ### Option 1: Install Globally as an Antigravity Plugin (Recommended)
-Makes all 25 skills, 5 subagents, and rules available automatically across **every** workspace:
+Makes all 27 skills, 5 subagents, and rules available automatically across **every** workspace:
 
 ```bash
 git clone https://github.com/dolong2110/ai-research-engineering-skills.git \
@@ -30,7 +32,7 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 
 ---
 
-## Included Skills (25)
+## Included Skills (27)
 
 ### 1. Core Research, Writing & Publication (4)
 | Skill | Purpose | Included Helper CLI / Assets |
@@ -48,7 +50,7 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 | `ai-for-chemistry` | SMILES/SELFIES/RDKit hygiene, Murcko scaffold/cluster splits, $E(3)$/$SE(3)$ symmetries & PMO | `chem_dataset_audit.py` (invalid SMILES, salt stripping, canonical cross-split leakage & scaffold overlap) |
 | `learned-algorithms-and-combinatorial-ai` | Algorithms with predictions (consistency/robustness/smoothness), learned indexes/filters & neural/LLM CO | — |
 
-### 3. Algorithms, Data Structures & Software Engineering (9)
+### 3. Algorithms, Data Structures, Software Engineering & GitHub CI/CD (11)
 | Skill | Purpose | Included Helper CLI / Assets |
 | :--- | :--- | :--- |
 | `algorithms-and-data-structures` | Big-O sizing, paradigm selection matrix, exchange/invariant proofs & oracle fuzzing | `benchmark_and_complexity.py` (differential brute-force oracle fuzzing + empirical Big-O & peak memory fitter) |
@@ -60,6 +62,8 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 | `testing-and-verification` | Offline API mocks & 4-check ML sanity suite (shapes, gradients, batch independence, 1-batch overfit) | — |
 | `systematic-debugging` | Root-cause loop + playbooks for LLM JSON truncation, ThreadPool hangs & training `NaN`s | — |
 | `git-and-code-review` | Conventional commits, severity-ranked reviews & pre-commit safety gate | `pre_commit_hygiene.py` (secrets, `>5 MB` checkpoints, conflict markers & syntax checks) |
+| `github-repo-and-collaboration` | GitHub repo setup, PR/issue forms, Dependabot, CODEOWNERS, `SECURITY.md`, branch protection & `gh` workflows | `init_github_repo.py` (`init` scaffolder for Python/Node/Plugin/LaTeX + `audit` readiness scorer) |
+| `github-actions-cicd` | Fast cached CI/CD pipelines, matrix tests, OIDC releases, LaTeX/Docker builds & Actions security hardening | `lint_workflows.py` (audits `permissions`, `concurrency`, `timeout-minutes`, script injection & pinned actions) |
 
 ### 4. PaperOrchestra Automation (8)
 Designed to pair with [`google-research/paper-orchestra`](https://github.com/google-research/paper-orchestra):
