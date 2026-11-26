@@ -53,8 +53,10 @@ echo "=== 5/6 Security & Production Readiness Scan ==="
 python3 skills/security-and-production-ops/scripts/security_static_scan.py --path skills
 
 echo ""
-echo "=== 6/6 Algorithm Oracle & Complexity Self-Test ==="
+echo "=== 6/6 Algorithm, Math & Serving Self-Tests ==="
 python3 skills/algorithms-and-data-structures/scripts/benchmark_and_complexity.py --self-test --sizes 200,400,800
+python3 skills/math-proofs-and-theoretical-analysis/scripts/verify_math_numerically.py --self-test
+python3 skills/model-serving-and-inference-optimization/scripts/benchmark_inference_latency.py --self-test
 
 echo ""
 echo "ALL LOCAL CI CHECKS PASSED."
