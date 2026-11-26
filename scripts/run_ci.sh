@@ -53,10 +53,14 @@ echo "=== 5/6 Security & Production Readiness Scan ==="
 python3 skills/security-and-production-ops/scripts/security_static_scan.py --path skills
 
 echo ""
-echo "=== 6/6 Algorithm, Math & Serving Self-Tests ==="
+echo "=== 6/6 Algorithm, Math, Serving, Causal, RL, Conformal & Roofline Self-Tests ==="
 python3 skills/algorithms-and-data-structures/scripts/benchmark_and_complexity.py --self-test --sizes 200,400,800
 python3 skills/math-proofs-and-theoretical-analysis/scripts/verify_math_numerically.py --self-test
 python3 skills/model-serving-and-inference-optimization/scripts/benchmark_inference_latency.py --self-test
+python3 skills/causal-inference-and-econometrics/scripts/causal_diagnostics.py --self-test
+python3 skills/reinforcement-learning-and-decision-making/scripts/rliable_eval.py --self-test
+python3 skills/bayesian-uncertainty-and-active-learning/scripts/calibration_and_conformal.py --self-test
+python3 skills/systems-cpp-rust-triton-kernels/scripts/roofline_analyzer.py --self-test
 
 echo ""
 echo "ALL LOCAL CI CHECKS PASSED."

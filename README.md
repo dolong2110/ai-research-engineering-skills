@@ -1,6 +1,6 @@
 # AI Research & Engineering Skills (Antigravity Plugin)
 
-A complete, batteries-included **Google Antigravity** plugin bundling **37 modular skills**, **5 specialized subagents**, **23 runnable Python audit/benchmark/scaffolding CLIs**, and always-on scientific & software engineering rules.
+A complete, batteries-included **Google Antigravity** plugin bundling **41 modular skills**, **5 specialized subagents**, **27 runnable Python audit/benchmark/scaffolding CLIs**, and always-on scientific & software engineering rules.
 
 Built for interdisciplinary AI/ML/DL/LLM research across **Quantitative Finance**, **LLMs & NLP**, **AI for Chemistry**, **Algorithms & Data Structures**, **ML Systems & Serving**, **Software Engineering & GitHub CI/CD**, and automated paper drafting with **[PaperOrchestra](https://github.com/google-research/paper-orchestra)**.
 
@@ -9,7 +9,7 @@ Built for interdisciplinary AI/ML/DL/LLM research across **Quantitative Finance*
 ## Quick Install (Share with Friends)
 
 ### Option 1: Install Globally as an Antigravity Plugin (Recommended)
-Makes all 37 skills, 5 subagents, and rules available automatically across **every** workspace:
+Makes all 41 skills, 5 subagents, and rules available automatically across **every** workspace:
 
 ```bash
 git clone https://github.com/dolong2110/ai-research-engineering-skills.git \
@@ -30,7 +30,7 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 
 ---
 
-## Included Skills (37)
+## Included Skills (41)
 
 ### 1. Core Research, Theory, Writing, Presentations & Publication (8)
 | Skill | Purpose | Included Helper CLI / Assets |
@@ -44,13 +44,16 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 | `research-presentations-and-posters` | 5-min spotlight / 15-min oral talks (Beamer/Slides), A0 posters & GitHub Pages project sites | `talk_and_poster_blueprint.md` |
 | `grant-and-research-proposals` | Specific Aims, modular research pitches, risk/mitigation tables & compute budgets | `research_proposal_template.md` |
 
-### 2. Domain-Specialized AI Research (4)
+### 2. Domain & Advanced AI Research (7)
 | Skill | Purpose | Included Helper CLI |
 | :--- | :--- | :--- |
 | `quant-finance-ml` | Purged/embargoed walk-forward CV, point-in-time timestamps, survivorship & LLM cutoff guards | `backtest_and_leakage_audit.py` (IC, Rank IC, ICIR, Gross/Net Sharpe, Sortino, MDD, Turnover, Break-Even bps, PSR) |
 | `llm-and-nlp-research` | SFT/DPO/GRPO, LoRA/QLoRA, RAG, matched token budgets, prompt variance & contamination checks | `nlp_llm_eval_metrics.py` (unbiased `pass@k`, position-debiased pairwise LLM-judge, verbosity bias & Cohen's $\kappa$) |
 | `ai-for-chemistry` | SMILES/SELFIES/RDKit hygiene, Murcko scaffold/cluster splits, $E(3)$/$SE(3)$ symmetries & PMO | `chem_dataset_audit.py` (invalid SMILES, salt stripping, canonical cross-split leakage & scaffold overlap) |
 | `learned-algorithms-and-combinatorial-ai` | Algorithms with predictions (consistency/robustness/smoothness), learned indexes/filters & neural/LLM CO | — |
+| `causal-inference-and-econometrics` | Causal DAGs, DiD/staggered DiD, 2SLS IV, RDD, DML cross-fitting & HAC/clustered SEs | `causal_diagnostics.py` (covariate balance SMD, 2×2 DiD ATE & Newey–West HAC mean tests) |
+| `reinforcement-learning-and-decision-making` | PPO/GRPO/SAC/Offline RL, truncation vs. termination, reward-hacking audits & rliable evaluation | `rliable_eval.py` (IQM, stratified bootstrap 95% CIs & Probability of Improvement) |
+| `bayesian-uncertainty-and-active-learning` | Probability calibration, Split/Adaptive Conformal Prediction & GP/BoTorch active learning | `calibration_and_conformal.py` (ECE, MCE, Brier, NLL & distribution-free conformal coverage) |
 
 ### 3. ML Infrastructure, Data, Serving, Evals & Interactive Demos (5)
 | Skill | Purpose | Included Helper CLI |
@@ -61,10 +64,11 @@ cp /tmp/ai-skills/rules/AGENTS.md ./AGENTS.md
 | `prompt-and-agent-eval-engineering` | Golden test sets, tool-call trajectory grading, failure taxonomies & merge regression gates | `compare_eval_runs.py` (baseline vs. candidate slice diffs, regressed IDs & exact McNemar's test) |
 | `interactive-ml-demos-and-apps` | Cached, streaming Streamlit/Gradio/FastAPI model & research dashboards | — |
 
-### 4. Algorithms, Data Structures, Software Engineering, Docker & GitHub CI/CD (12)
+### 4. Algorithms, Systems, Software Engineering, Docker & GitHub CI/CD (13)
 | Skill | Purpose | Included Helper CLI / Assets |
 | :--- | :--- | :--- |
 | `algorithms-and-data-structures` | Big-O sizing, paradigm selection matrix, exchange/invariant proofs & oracle fuzzing | `benchmark_and_complexity.py` (differential brute-force oracle fuzzing + empirical Big-O & peak memory fitter) |
+| `systems-cpp-rust-triton-kernels` | Low-latency C++20/Rust (SoA, SIMD, lock-free, PyBind11/PyO3) & Triton/CUDA GPU kernels | `roofline_analyzer.py` (arithmetic intensity, ridge point, memory-vs-compute diagnosis & utilization) |
 | `system-design-and-architecture` | Capacity sizing, deep modules, Ports & Adapters, idempotency, retries, backpressure & ADRs | `adr_and_rfc_template.md` |
 | `api-and-database-engineering` | REST/gRPC contracts, cursor pagination, composite SQL indexes, `EXPLAIN ANALYZE` & zero-downtime migrations | — |
 | `performance-and-concurrency` | Amdahl's Law profiling, `asyncio` vs. threads vs. processes vs. vectorization & lock safety | `profile_hotspot.py` (`cProfile` + `tracemalloc` top CPU/heap hotspot summary) |
